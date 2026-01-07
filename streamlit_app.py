@@ -1,5 +1,5 @@
 import streamlit as st
 
-st.set_page_confif(page_title="Bits ML Classification and Models & Metrics")
+st.set_page_config(page_title="Bits ML Classification and Models & Metrics")
 st.title("Classification Model and Evaluation matrix")
 
