@@ -17,6 +17,6 @@ with st.sidebar:
      st.header("Data & Setting")
      data_choice=st.radio("choose dataset",["Upload CSV","sample,breast cancer(binary)"])
      test_size=st.slider("Test Size (Validation Split)",0.1,0.2,0.02)
-     scale_numeric=st.checkbox("Scale Numeric features(StandradScalar)",value=true)
+     scale_numeric=st.checkbox("Scale Numeric features(StandradScalar)",value=True)
      nb_variant=st.selectbox("Naive Bayes varient",["GaussianNB","MultinomialNB"])
      random_state=st.number_input("Random seed",min_value=0,max_value=10000, value=42,step=1)
