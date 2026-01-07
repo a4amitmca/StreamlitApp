@@ -21,7 +21,7 @@ with st.sidebar:
      nb_variant=st.selectbox("Naive Bayes varient",["GaussianNB","MultinomialNB"])
      random_state=st.number_input("Random seed",min_value=0,max_value=10000, value=42,step=1)
 if data_choice=="Upload CSV":
-     uploaded=st.file_uploader=("Upload the CSV file (last colum target recomended)",type=["csv"])
+     uploaded=st.file_uploader("Upload the CSV file (last colum target recomended)",type=["csv"])
      df=NONE
      if uploaded is not NONE:
         df=pd.read_csv(uploaded)
