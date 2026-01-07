@@ -1,5 +1,5 @@
 import streamlit as st
-import panda as pd
+import pandas as pd
 st.set_page_config(page_title="Bits ML Classification and Models & Metrics")
 st.title("Classification Model and Evaluation matrix")
 st.markdown("""
