@@ -23,7 +23,7 @@ with st.sidebar:
 if data_choice=="Upload CSV":
      uploaded=st.file_uploader("Upload the CSV file (last colum target recomended)",type=["csv"])
      df=NONE
-     if uploaded is not NONE:
+     if uploaded is not None:
         df=pd.read_csv(uploaded)
         st.write("preview:",df.head())
         st.write("shape",{df.shape()})
