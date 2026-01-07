@@ -11,11 +11,11 @@ This app train six classification model on a single data set and reports the fol
 - F1 Score
 - Mathhews corelation coefficent (MCC)
 
- you can upload your owndata set(CSV) or use the simple ** Breast cancer Wisconsin ** dataset (30 features , 550 instances).           
+ you can upload your owndataset(CSV) min 12 features and 1000 instances).           
 """)
 with st.sidebar:
      st.header("Data & Setting")
-     data_choice=st.radio("choose dataset",["Upload CSV","sample,breast cancer(binary)"])
+     data_choice=st.radio("choose dataset",["Upload CSV","upload your owndataset"])
      test_size=st.slider("Test Size (Validation Split)",0.1,0.2,0.02)
      scale_numeric=st.checkbox("Scale Numeric features(StandradScalar)",value=True)
      nb_variant=st.selectbox("Naive Bayes varient",["GaussianNB","MultinomialNB"])
