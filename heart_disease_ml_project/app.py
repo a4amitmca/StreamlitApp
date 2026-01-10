@@ -20,7 +20,7 @@ with st.sidebar:
      data_choice=st.selectbox("choose dataset",["Upload CSV","Uploaad Excel CSV supported"])
      test_size=st.slider("Test Size (Validation Split)",0.1,0.4,0.2,0.02)
      scale_numeric=st.checkbox("Scale Numeric features(StandradScalar)",value=True)
-     model_option = st.selectbox("Select Model",("Logistic Regression", "Decision Tree Classifier","K-Nearest Neighbor Classifier","Naive Bayes Classifier - Gaussian or Multinomial","Ensemble Model - Random Forest","Ensemble Model - XGBoost"))
+     model_option = st.selectbox("Select Model",["Logistic Regression", "Random Forest", "KNN", "Decision Tree", "SVM", "XGBoost"])
      random_state=st.number_input("Random seed",min_value=0,max_value=10000, value=42,step=1)
 if data_choice=="Upload CSV":
      uploaded=st.file_uploader("Upload the CSV file (last colum target recomended)",type=["csv"])
@@ -37,15 +37,26 @@ if data_choice=="Upload CSV":
 st.markdown("--------------Evaluation metrics---------------------------")     
 
 
-if model_option == "Logistic Regression":
-    url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/LogisticRegression_report.txt"
+metrics_urls = {
+    "Logistic Regression": "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/LogisticRegression_report.txt",
+    "Random Forest":       "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/RandomForest_report.txt",
+    "KNN":                 "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/KNN_report.txt",
+    "Decision Tree":       "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/DecisionTree_report.txt",
+    "SVM":                 "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/SVM_report.txt",
+    "XGBoost":             "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/XGBoost_report.txt",
+}
+
+# Fetch and display metrics
+url = metrics_urls.get(model_option)  # Get URL for selected model
+if url:
     response = requests.get(url)
-    st.write("response",response);
     if response.status_code == 200:
-       metrics_text = response.text
-       st.subheader("Evaluation Metrics")
-       st.text(metrics_text)  # or st.markdown(f"```\n{metrics_text}\n```")
+        metrics_text = response.text
+        st.subheader(f"Evaluation Metrics for {model_option}")
+        st.markdown(f"```\n{metrics_text}\n```")  # preserves formatting
     else:
-       st.error("Could not fetch the metrics file from GitHub")
+        st.error(f"Could not fetch the metrics file for {model_option}")
+else:
+    st.warning("No metrics available for the selected model")
          
    
