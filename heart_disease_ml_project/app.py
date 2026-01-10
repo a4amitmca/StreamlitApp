@@ -26,7 +26,7 @@ if data_choice=="Upload CSV":
      if uploaded is not None:
         df=pd.read_csv(uploaded)
         st.write("preview:",df.head())
-        st.write("shape",{df.shape()})
+        st.write("shape",df.shape)
      
      else:
          st.write("file is not uploaded")
