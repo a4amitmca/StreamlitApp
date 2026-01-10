@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 import os
+import requests
 st.set_page_config(page_title="Bits ML Classification and Models & Metrics")
 st.title("Classification Model and Evaluation matrix")
 st.markdown("""
@@ -38,7 +39,12 @@ st.markdown("--------------Evaluation metrics---------------------------")
 
 if model_option == "Logistic Regression":
     url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/Logistic Regression_report.txt"
-    metrics_text = pd.read_csv(url, header=None).to_string(index=False)
-    st.text(metrics_text)
+    response = requests.get(url)
+    if response.status_code == 200:
+       metrics_text = response.text
+       st.subheader("Evaluation Metrics")
+       st.text(metrics_text)  # or st.markdown(f"```\n{metrics_text}\n```")
+    else:
+       st.error("Could not fetch the metrics file from GitHub"
          
    
