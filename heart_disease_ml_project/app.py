@@ -165,7 +165,7 @@ if os.path.exists(readme_path):
     else:
         print("Placeholder tags not found in README.md; skipping auto-update.")
       
-     else:
+else:
         st.markdown("--------------Default File Heart.csv---------------------------")    
         csv_url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/data/heart.csv"
         df = pd.read_csv(csv_url)
