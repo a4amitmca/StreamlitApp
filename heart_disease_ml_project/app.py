@@ -50,11 +50,11 @@ if data_choice=="Upload CSV":
         st.success(f"File saved as {save_name}")
         subprocess.run(["python3", "train.py"])
         st.success("Model Training Successfull for train.py")
-        DATA_PATH = os.path.join('data', 'heart.csv')
-assert os.path.exists(DATA_PATH), f"Dataset not found at {DATA_PATH}. Please download heart.csv from Kaggle and place it here."
+        #DATA_PATH = os.path.join('data', 'heart.csv')
+assert os.path.exists(save_name), f"Dataset not found at {DATA_PATH}. Please download heart.csv from Kaggle and place it here."
 
 # Load dataset
-df = pd.read_csv(DATA_PATH)
+
 assert TARGET_COL in df.columns, f"Target column '{TARGET_COL}' not found. Columns: {df.columns.tolist()}"
 
 # Train/test split
