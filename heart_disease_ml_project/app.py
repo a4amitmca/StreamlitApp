@@ -33,6 +33,12 @@ if data_choice=="Upload CSV":
         csv_url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/data/heart.csv"
         df = pd.read_csv(csv_url)
         st.dataframe(df.head())
+ st.markdown("--------------Evaluation metrics---------------------------")     
 
+
+if model_option == "Logistic Regression":
+    csv_url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/data/heart.csv"
+    df = pd.read_csv(csv_url)
+    st.dataframe(df.head())
          
    
