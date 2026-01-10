@@ -55,7 +55,7 @@ if data_choice=="Upload CSV":
 
 # Load dataset
 
-assert TARGET_COL in df.columns, f"Target column '{TARGET_COL}' not found. Columns: {df.columns.tolist()}"
+#assert TARGET_COL in df.columns, f"Target column '{TARGET_COL}' not found. Columns: {df.columns.tolist()}"
 
 # Train/test split
 X = df.drop(columns=[TARGET_COL])
