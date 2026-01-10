@@ -18,7 +18,7 @@ with st.sidebar:
      data_choice=st.selectbox("choose dataset",["Upload CSV","Uploaad Excel CSV supported"])
      test_size=st.slider("Test Size (Validation Split)",0.1,0.4,0.2,0.02)
      scale_numeric=st.checkbox("Scale Numeric features(StandradScalar)",value=True)
-     nb_variant=st.selectbox("Naive Bayes varient",["GaussianNB","MultinomialNB"])
+     model_option = st.selectbox("Select Model",("Logistic Regression", "Decision Tree Classifier","K-Nearest Neighbor Classifier","Naive Bayes Classifier - Gaussian or Multinomial","Ensemble Model - Random Forest","Ensemble Model - XGBoost"))
      random_state=st.number_input("Random seed",min_value=0,max_value=10000, value=42,step=1)
 if data_choice=="Upload CSV":
      uploaded=st.file_uploader("Upload the CSV file (last colum target recomended)",type=["csv"])
@@ -29,5 +29,7 @@ if data_choice=="Upload CSV":
         st.write("shape",df.shape)
      
      else:
-         st.write("file is not uploaded")
+         df=pd.read_csv("data/heart.csv")
+         st.write("preview:",df.head())
+         st.write("shape",df.shape)
    
