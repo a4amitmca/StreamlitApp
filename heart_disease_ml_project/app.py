@@ -51,7 +51,7 @@ if data_choice=="Upload CSV":
         subprocess.run(["python3", "train.py"])
         st.success("Model Training Successfull for train.py")
         #DATA_PATH = os.path.join('data', 'heart.csv')
-assert os.path.exists(save_name), f"Dataset not found at {DATA_PATH}. Please download heart.csv from Kaggle and place it here."
+#assert os.path.exists(save_name), f"Dataset not found at {DATA_PATH}. Please download heart.csv from Kaggle and place it here."
 
 # Load dataset
 
