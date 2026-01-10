@@ -38,7 +38,7 @@ st.markdown("--------------Evaluation metrics---------------------------")
 
 
 if model_option == "Logistic Regression":
-    url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/Logistic Regression_report.txt"
+    url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/Logistic_Regression_report.txt"
     response = requests.get(url)
     if response.status_code == 200:
        metrics_text = response.text
