@@ -46,6 +46,6 @@ if model_option == "Logistic Regression":
        st.subheader("Evaluation Metrics")
        st.text(metrics_text)  # or st.markdown(f"```\n{metrics_text}\n```")
     else:
-       st.error("Could not fetch the metrics file from GitHub"
+       st.error("Could not fetch the metrics file from GitHub")
          
    
