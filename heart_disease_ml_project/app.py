@@ -35,7 +35,7 @@ if data_choice=="Upload CSV":
            df = pd.read_csv(csv_path)
            st.write("preview:",df.head())
            st.write("shape",df.shape)
-       else:
+        else:
           st.error(f"CSV file not found at {csv_path}")
          
    
