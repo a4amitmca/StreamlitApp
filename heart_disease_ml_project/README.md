@@ -21,6 +21,16 @@ We use the **Heart Disease / Heart Failure Prediction** dataset widely derived f
 5. Random Forest (Ensemble)
 6. XGBoost (Ensemble)
 
+
+###Dataset description
+
+Shape: 918 rows × 12 columns. No missing values in any column. 2
+Target (HeartDisease): 508 cases (55.34%) with disease, 410 (44.66%) without. Slight class imbalance toward positive class. 2
+Column types:
+
+Numeric (7): Age, RestingBP, Cholesterol, FastingBS, MaxHR, Oldpeak, HeartDisease. 2
+Categorical (5): Sex, ChestPainType, RestingECG, ExerciseAngina, ST_Slope. 2
+
 ### Comparison Table
 <!--METRICS_TABLE_START-->
 
