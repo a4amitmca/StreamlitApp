@@ -37,8 +37,8 @@ st.markdown("--------------Evaluation metrics---------------------------")
 
 
 if model_option == "Logistic Regression":
-    csv_url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/data/heart.csv"
-    df = pd.read_csv(csv_url)
-    st.dataframe(df.head())
+    csv_url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/Logistic Regression_report.txt"
+    metrics_text = pd.read_csv(url, header=None).to_string(index=False)
+    st.text(metrics_text)
          
    
