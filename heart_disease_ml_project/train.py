@@ -10,6 +10,7 @@ This script:
 - Saves models and the fitted preprocessor to models/
 - Writes metrics.csv and auto-updates README.md with a comparison table
 """
+import streamlit as st
 import os
 import pandas as pd
 import numpy as np
@@ -139,5 +140,6 @@ if os.path.exists(readme_path):
         with open(readme_path, 'w', encoding='utf-8') as f:
             f.write(new_md)
         print("README.md updated with metrics table.")
+        st.write("README.md updated with metrics table.")
     else:
         print("Placeholder tags not found in README.md; skipping auto-update.")
