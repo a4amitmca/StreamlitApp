@@ -42,7 +42,7 @@ metrics_urls = {
     "Random Forest":       "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/RandomForest_report.txt",
     "KNN":                 "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/KNN_report.txt",
     "Decision Tree":       "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/DecisionTree_report.txt",
-    "SVM":                 "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/SVM_report.txt",
+    "SVM":                 "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/NaiveBayes(Gaussian)_report.txt.txt",
     "XGBoost":             "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/XGBoost_report.txt",
 }
 
