@@ -31,11 +31,17 @@ if data_choice=="Upload CSV":
         st.write("shape",df.shape)
      
      else:
+        st.markdown("--------------Default File Heart.csv---------------------------")    
         csv_url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/data/heart.csv"
         df = pd.read_csv(csv_url)
         st.dataframe(df.head())
-st.markdown("--------------Evaluation metrics---------------------------")     
-
+ 
+st.markdown("--------------Default File Heart.csv---------------------------") 
+response = requests.get("https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/metrics.csv")
+f response.status_code == 200:
+        metrics_text = response.text
+        st.subheader(f"Evaluation Metrics for Heart.csv")
+        st.markdown(f"```\n{metrics_text}\n```")  # preserves formatting
 
 metrics_urls = {
     "Logistic Regression": "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/LogisticRegression_report.txt",
