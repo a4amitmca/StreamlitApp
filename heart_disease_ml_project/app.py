@@ -34,7 +34,7 @@ if data_choice=="Upload CSV":
         st.write("shape",df.shape)
         target = st.selectbox("Select Target Column", df.columns)
 
-    if st.button("Generate Model Report"):
+     if st.button("Generate Model Report"):
         report = train_and_evaluate(df, target)
         st.dataframe(report)
       
