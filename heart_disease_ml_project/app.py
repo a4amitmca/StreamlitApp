@@ -31,7 +31,7 @@ if data_choice=="Upload CSV":
         df=pd.read_csv(uploaded)
         st.write("preview:",df.head())
         st.write("shape",df.shape)
-        save_name = "data/heart.csv"
+        save_name = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/data/heart.csv"
         df.to_csv(save_name, index=False)
         st.success(f"File saved as {save_name}")
         subprocess.run(["python3", "train.py"])
