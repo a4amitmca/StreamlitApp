@@ -2,6 +2,8 @@ import streamlit as st
 import pandas as pd
 import os
 import requests
+import subprocess
+
 st.set_page_config(page_title="Bits ML Classification and Models & Metrics")
 st.title("Classification Model and Evaluation matrix")
 st.markdown("""
@@ -29,7 +31,10 @@ if data_choice=="Upload CSV":
         df=pd.read_csv(uploaded)
         st.write("preview:",df.head())
         st.write("shape",df.shape)
-     
+        save_name = "data/heart.csv"
+        df.to_csv(save_name, index=False)
+        st.success(f"File saved as {save_name}")
+        subprocess.run(["python3", "train.py"])
      else:
         st.markdown("--------------Default File Heart.csv---------------------------")    
         csv_url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/data/heart.csv"
