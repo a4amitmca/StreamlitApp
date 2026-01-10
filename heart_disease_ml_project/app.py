@@ -36,7 +36,7 @@ if data_choice=="Upload CSV":
         df.to_csv(save_name, index=False)
         st.success(f"File saved as {save_name}")
         subprocess.run(["python3", "train.py"])
-        st.success("Model Training Successfull for train.py")
+        st.success("Model Training Successfull from train.py")
       
 else:
      st.markdown("--------------Default File Heart.csv---------------------------")    
