@@ -36,11 +36,11 @@ if data_choice=="Upload CSV":
         df = pd.read_csv(csv_url)
         st.dataframe(df.head())
  
-st.markdown("--------------Default File Heart.csv---------------------------") 
+st.markdown("--------------Matrix for all 6 Model of Heart.csv---------------------------") 
 csv_url="https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/metrics.csv"
 df = pd.read_csv(csv_url)
 st.dataframe(df.head())
-
+st.markdown("--------------This is Matrix for all model selection of Heart.csv---------------------------") 
 metrics_urls = {
     "Logistic Regression": "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/LogisticRegression_report.txt",
     "Random Forest":       "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/RandomForest_report.txt",
