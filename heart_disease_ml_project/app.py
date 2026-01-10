@@ -4,7 +4,7 @@ import requests
 import subprocess
 import pandas as pd
 import numpy as np
-from train_engine import train_and_evaluate
+from train import train_and_evaluate
 st.set_page_config(page_title="Bits ML Classification and Models & Metrics")
 st.title("Classification Model and Evaluation matrix")
 st.markdown("""
