@@ -30,12 +30,9 @@ if data_choice=="Upload CSV":
         st.write("shape",df.shape)
      
      else:
-        csv_path = "data/heart.csv"
-        if os.path.exists(csv_path):
-           df = pd.read_csv(csv_path)
-           st.write("preview:",df.head())
-           st.write("shape",df.shape)
-        else:
-          st.error(f"CSV file not found at {csv_path}")
+        csv_url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/data/heart.csv"
+        df = pd.read_csv(csv_url)
+        st.dataframe(df.head())
+
          
    
