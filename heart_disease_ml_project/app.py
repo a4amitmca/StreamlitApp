@@ -1,5 +1,6 @@
 import streamlit as st
 import pandas as pd
+import os
 st.set_page_config(page_title="Bits ML Classification and Models & Metrics")
 st.title("Classification Model and Evaluation matrix")
 st.markdown("""
@@ -29,7 +30,12 @@ if data_choice=="Upload CSV":
         st.write("shape",df.shape)
      
      else:
-         df=pd.read_csv("data/heart.csv")
-         st.write("preview:",df.head())
-         st.write("shape",df.shape)
+        csv_path = "data/heart.csv"
+        if os.path.exists(csv_path):
+           df = pd.read_csv(csv_path)
+           st.write("preview:",df.head())
+           st.write("shape",df.shape)
+       else:
+          st.error(f"CSV file not found at {csv_path}")
+         
    
