@@ -4,20 +4,7 @@ import requests
 import subprocess
 import pandas as pd
 import numpy as np
-from sklearn.model_selection import train_test_split
-from sklearn.pipeline import Pipeline
-from sklearn.linear_model import LogisticRegression
-from sklearn.tree import DecisionTreeClassifier
-from sklearn.neighbors import KNeighborsClassifier
-from sklearn.naive_bayes import GaussianNB
-from sklearn.ensemble import RandomForestClassifier
-from xgboost import XGBClassifier
-from sklearn.metrics import (
-    accuracy_score, roc_auc_score, precision_score, recall_score, f1_score,
-    matthews_corrcoef, classification_report, confusion_matrix
-)
-from joblib import dump
-from utils import TARGET_COL, build_preprocessor
+
 st.set_page_config(page_title="Bits ML Classification and Models & Metrics")
 st.title("Classification Model and Evaluation matrix")
 st.markdown("""
@@ -50,7 +37,8 @@ if data_choice=="Upload CSV":
         st.success(f"File saved as {save_name}")
         subprocess.run(["python3", "train.py"])
         st.success("Model Training Successfull for train.py")
-
+        st.dataframe(df.head())
+        st.write("Shape".df.shape)
       
 else:
         st.markdown("--------------Default File Heart.csv---------------------------")    
