@@ -1,0 +1,15 @@
+Classification Report for kNN
+
+              precision    recall  f1-score   support
+
+           0       0.91      0.89      0.90        82
+           1       0.91      0.93      0.92       102
+
+    accuracy                           0.91       184
+   macro avg       0.91      0.91      0.91       184
+weighted avg       0.91      0.91      0.91       184
+
+
+Confusion Matrix:
+[[73  9]
+ [ 7 95]]

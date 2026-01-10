@@ -23,9 +23,16 @@ We use the **Heart Disease / Heart Failure Prediction** dataset widely derived f
 
 ### Comparison Table
 <!--METRICS_TABLE_START-->
+
 | **ML Model Name** | **Accuracy** | **AUC** | **Precision** | **Recall** | **F1** | **MCC** |
 |---|---|---|---|---|---|---|
-| _metrics will be injected here by `train.py`_ |  |  |  |  |  |  |
+| Logistic Regression | 0.8859 | 0.9299 | 0.8716 | 0.9314 | 0.9005 | 0.7694 |
+| Decision Tree | 0.7935 | 0.7910 | 0.8137 | 0.8137 | 0.8137 | 0.5820 |
+| kNN | 0.9130 | 0.9503 | 0.9135 | 0.9314 | 0.9223 | 0.8238 |
+| Naive Bayes (Gaussian) | 0.8859 | 0.9118 | 0.8932 | 0.9020 | 0.8976 | 0.7688 |
+| Random Forest | 0.9022 | 0.9331 | 0.8962 | 0.9314 | 0.9135 | 0.8018 |
+| XGBoost | 0.8696 | 0.9284 | 0.8980 | 0.8627 | 0.8800 | 0.7380 |
+
 <!--METRICS_TABLE_END-->
 
 ### Observations

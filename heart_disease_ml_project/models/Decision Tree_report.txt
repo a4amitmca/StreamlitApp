@@ -1,0 +1,15 @@
+Classification Report for Decision Tree
+
+              precision    recall  f1-score   support
+
+           0       0.77      0.77      0.77        82
+           1       0.81      0.81      0.81       102
+
+    accuracy                           0.79       184
+   macro avg       0.79      0.79      0.79       184
+weighted avg       0.79      0.79      0.79       184
+
+
+Confusion Matrix:
+[[63 19]
+ [19 83]]
