@@ -32,4 +32,13 @@ We use the **Heart Disease / Heart Failure Prediction** dataset widely derived f
 (Add comments after training, e.g., Random Forest/XGBoost typically achieve higher AUC and MCC; Logistic Regression is interpretable; kNN may underperform with many one-hot features; Naive Bayes can be fast but assumes feature independence.)
 
 ## Repository Structure
-``
+StreamlitApp/
+├── app.py
+├── train.py
+├── requirements.txt
+├── utils.py
+├── data/
+│   └── heart.csv
+└── models/
+├── *.pkl
+└── metrics.csv
