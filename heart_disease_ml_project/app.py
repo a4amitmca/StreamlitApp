@@ -38,10 +38,10 @@ if data_choice=="Upload CSV":
  
 st.markdown("--------------Default File Heart.csv---------------------------") 
 response = requests.get("https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/metrics.csv")
-response.status_code == 200:
-metrics_text = response.text
-st.subheader(f"Evaluation Metrics for Heart.csv")
-st.markdown(f"```\n{metrics_text}\n```")  # preserves formatting
+if response.status_code == 200:
+   metrics_text = response.text
+   st.subheader(f"Evaluation Metrics for Heart.csv")
+   st.markdown(f"```\n{metrics_text}\n```")  # preserves formatting
 
 metrics_urls = {
     "Logistic Regression": "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/LogisticRegression_report.txt",
