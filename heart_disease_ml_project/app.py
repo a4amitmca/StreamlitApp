@@ -4,7 +4,7 @@ import requests
 import subprocess
 import pandas as pd
 import numpy as np
-from train import train_and_evaluate
+
 st.set_page_config(page_title="Bits ML Classification and Models & Metrics")
 st.title("Classification Model and Evaluation matrix")
 st.markdown("""
@@ -32,11 +32,7 @@ if data_choice=="Upload CSV":
         df=pd.read_csv(uploaded)
         st.write("preview:",df.head())
         st.write("shape",df.shape)
-        target = st.selectbox("Select Target Column", df.columns)
-
-     if st.button("Generate Model Report"):
-        report = train_and_evaluate(df, target)
-        st.dataframe(report)
+  
       
 else:
      st.markdown("--------------Default File Heart.csv---------------------------")    
