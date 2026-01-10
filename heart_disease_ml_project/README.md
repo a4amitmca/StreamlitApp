@@ -36,7 +36,18 @@ We use the **Heart Disease / Heart Failure Prediction** dataset widely derived f
 <!--METRICS_TABLE_END-->
 
 ### Observations
-(Add comments after training, e.g., Random Forest/XGBoost typically achieve higher AUC and MCC; Logistic Regression is interpretable; kNN may underperform with many one-hot features; Naive Bayes can be fast but assumes feature independence.)
+ML Model Name	Observation about Model Performance
+Logistic Regression	Achieved 88.59% accuracy with a strong AUC of 0.93. It shows good generalization and high recall (93.14%), making it effective at identifying heart disease cases, though slightly weaker than top-performing models.
+Decision Tree	Produced the lowest performance with 79.35% accuracy and MCC of 0.58, indicating overfitting and weaker generalization compared to ensemble and distance-based methods.
+kNN	Delivered the best overall performance with 91.30% accuracy, highest AUC (0.95), F1-score 0.92, and highest MCC (0.82). This indicates excellent predictive power and balanced classification.
+Naive Bayes	Achieved 88.59% accuracy with solid balance between precision and recall. Performs well despite strong independence assumptions, making it a reliable and computationally efficient model.
+Random Forest (Ensemble)	Reached 90.21% accuracy with high AUC (0.93) and MCC (0.80). The ensemble approach significantly improves stability and robustness over a single decision tree.
+XGBoost (Ensemble)	Obtained 86.96% accuracy with strong precision (0.90). While powerful, it slightly underperformed compared to kNN and Random Forest on this dataset, likely due to hyperparameter sensitivity.
+
+Overall Conclusion for Report
+
+kNN emerged as the top-performing model on this dataset, followed closely by Random Forest, while Decision Tree showed the weakest performance. Ensemble methods improved stability and accuracy, but the distance-based kNN classifier achieved the most balanced and reliable results across all evaluation metrics.
+
 
 ## Repository Structure
 StreamlitApp/
