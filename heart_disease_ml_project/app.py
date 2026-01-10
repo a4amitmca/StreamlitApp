@@ -37,14 +37,12 @@ if data_choice=="Upload CSV":
         st.success(f"File saved as {save_name}")
         subprocess.run(["python3", "train.py"])
         st.success("Model Training Successfull for train.py")
-        st.dataframe(df.head())
-        st.write("Shape".df.shape)
       
 else:
-        st.markdown("--------------Default File Heart.csv---------------------------")    
-        csv_url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/data/heart.csv"
-        df = pd.read_csv(csv_url)
-        st.dataframe(df.head())
+     st.markdown("--------------Default File Heart.csv---------------------------")    
+     csv_url = "https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/data/heart.csv"
+     df = pd.read_csv(csv_url)
+     st.dataframe(df.head())
  
 st.markdown("--------------Matrix for all 6 Model of Heart.csv---------------------------") 
 csv_url="https://raw.githubusercontent.com/a4amitmca/StreamlitApp/master/heart_disease_ml_project/models/metrics.csv"
