@@ -20,7 +20,7 @@ This app train six classification model on a single data set and reports the fol
 """)
 with st.sidebar:
      st.header("Data & Setting")
-     data_choice=st.selectbox("choose dataset",["Upload CSV","Uploaad Excel CSV supported"])
+     data_choice=st.selectbox("choose dataset",["none","Upload CSV","Uploaad Excel CSV supported"])
      #test_size=st.slider("Test Size (Validation Split)",0.1,0.4,0.2,0.02)
      #scale_numeric=st.checkbox("Scale Numeric features(StandradScalar)",value=True)
      #model_option = st.selectbox("Select Model",["Logistic Regression", "Random Forest", "KNN", "Decision Tree", "SVM", "XGBoost"])
