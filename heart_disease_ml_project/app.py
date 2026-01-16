@@ -42,7 +42,7 @@ else:
  
 st.markdown("--------------Report for all 6 Model of WA_Fn-UseC-Telco-Customer-Churn.csv.csv---------------------------") 
 response = requests.get("https://github.com/madhurendrabtech/mlassignment2/blob/main/Models/reports.json")
- if response.status_code == 200:
+if response.status_code == 200:
      metrics_text = response.text
      st.subheader(f"Evaluation Metrics for {model_option}")
      st.markdown(f"```\n{metrics_text}\n```")  # preserves formatting
