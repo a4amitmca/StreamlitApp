@@ -232,7 +232,7 @@ except ValueError as e:
     st.error(f"Failed to parse reports.json: {e}")
 
 st.divider()
-st.markdown("### Metrics for all model selections of `Heart.csv`")
+st.markdown("### Metrics for all model selections of `WA_Fn-UseC-Telco-Customer-Churn.csv`")
 
 # -----------------------------
 # Metrics.json
