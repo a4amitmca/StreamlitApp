@@ -44,7 +44,6 @@ st.markdown("--------------Report for all 6 Model of WA_Fn-UseC-Telco-Customer-C
 response = requests.get("https://github.com/madhurendrabtech/mlassignment2/blob/main/Models/reports.json")
 if response.status_code == 200:
      metrics_text = response.text
-     st.subheader(f"Evaluation Metrics for {model_option}")
      st.markdown(f"```\n{metrics_text}\n```")  # preserves formatting
 
 st.markdown("--------------This is Matrix for all model selection of Heart.csv---------------------------") 
@@ -54,7 +53,6 @@ st.markdown("--------------This is Matrix for all model selection of Heart.csv--
 response = requests.get("https://github.com/madhurendrabtech/mlassignment2/blob/main/Models/metrics.json")
 if response.status_code == 200:
    metrics_text = response.text
-   st.subheader(f"Evaluation Metrics for {model_option}")
    st.markdown(f"```\n{metrics_text}\n```")  # preserves formatting         
 
 
