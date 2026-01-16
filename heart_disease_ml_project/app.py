@@ -39,10 +39,25 @@ else:
      st.dataframe(df.head())
  
 st.markdown("--------------Report for all 6 Model of WA_Fn-UseC-Telco-Customer-Churn.csv---------------------------") 
-response = requests.get("https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/Models/reports.json")
-if response.status_code == 200:
-     metrics_text = response.text
-     st.markdown(f"```\n{metrics_text}\n```")  # preserves formatting
+
+URL = "https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/Models/reports.json"
+
+r = requests.get(URL, timeout=15)
+r.raise_for_status()
+data = r.json()
+
+if isinstance(data, dict):
+    # Convert dict-of-dicts into a table and bring keys into a column
+    df = pd.DataFrame.from_dict(data, orient="index").reset_index().rename(columns={"index":"model"})
+    st.subheader("Metrics (Tabular)")
+    st.dataframe(df, use_container_width=True)
+else:
+    st.warning("Expected dict at the root; falling back to generic display.")
+    st.dataframe(pd.json_normalize(data), use_container_width=True)
+
+with st.expander("Show raw JSON"):
+    st.json(data)
+
 
 st.markdown("--------------This is Matrix for all model selection of Heart.csv---------------------------") 
 
