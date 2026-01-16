@@ -41,16 +41,29 @@ else:
 st.markdown("--------------Report for all 6 Model of WA_Fn-UseC-Telco-Customer-Churn.csv---------------------------") 
 
 
-
 URL = "https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/Models/reports.json"
+response = requests.get(URL, timeout=15)
 
-# Generic flatten
-flat = pd.json_normalize(data, sep=".")
-st.subheader("Flattened metrics")
-st.dataframe(flat, use_container_width=True)
+if response.status_code == 200:
+    data = response.json()  # parse json
+    st.subheader("Tabular View")
+    try:
+        if isinstance(data, list):
+            st.dataframe(pd.DataFrame(data), use_container_width=True)
+        elif isinstance(data, dict):
+            # Try dict-of-dicts -> rows
+            df = pd.DataFrame.from_dict(data, orient="index").reset_index().rename(columns={"index":"key"})
+            st.dataframe(df, use_container_width=True)
+        else:
+            st.info("Unsupported JSON shape; showing flattened view.")
+            st.dataframe(pd.json_normalize(data), use_container_width=True)
+    except Exception as e:
+        st.error(f"Could not render as table: {e}")
 
-with st.expander("Show raw JSON"):
+    st.subheader("Raw JSON")
     st.json(data)
+else:
+    st.error(f"Failed to fetch file. Status code: {response.status_code}")
 
 
 
