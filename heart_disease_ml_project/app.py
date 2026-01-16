@@ -35,12 +35,12 @@ if data_choice=="Upload CSV":
   
       
 else:
-     st.markdown("--------------Default File Heart.csv---------------------------")    
+     st.markdown("--------------Default File WA_Fn-UseC-Telco-Customer-Churn.csv---------------------------")    
      csv_url = "https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/WA_Fn-UseC-Telco-Customer-Churn.csv"
      df = pd.read_csv(csv_url)
      st.dataframe(df.head())
  
-st.markdown("--------------Report for all 6 Model of WA_Fn-UseC-Telco-Customer-Churn.csv.csv---------------------------") 
+st.markdown("--------------Report for all 6 Model of WA_Fn-UseC-Telco-Customer-Churn.csv---------------------------") 
 response = requests.get("https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/Models/reports.json")
 if response.status_code == 200:
      metrics_text = response.text
