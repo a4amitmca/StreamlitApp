@@ -41,7 +41,8 @@ else:
 st.markdown("--------------Report for all 6 Model of WA_Fn-UseC-Telco-Customer-Churn.csv---------------------------") 
 
 
-URL = "https://raw = r.json()URL = "https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/Models/reports.json"
+
+URL = "https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/Models/reports.json"
 
 # Generic flatten
 flat = pd.json_normalize(data, sep=".")
