@@ -256,4 +256,4 @@ except requests.RequestException as e:
     st.error(f"Network error while fetching metrics.json: {e}")
 except ValueError as e:
     st.error(f"Failed to parse metrics.json: {e}")
-``
+
