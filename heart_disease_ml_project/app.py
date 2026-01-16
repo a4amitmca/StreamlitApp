@@ -31,9 +31,7 @@ if data_choice=="Upload CSV":
      if uploaded is not None:
         df=pd.read_csv(uploaded)
         st.write("preview:",df.head())
-        st.write("shape",df.shape)
-  
-      
+        st.write("shape",df.shape)  
 else:
      st.markdown("--------------Default File WA_Fn-UseC-Telco-Customer-Churn.csv---------------------------")    
      csv_url = "https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/WA_Fn-UseC-Telco-Customer-Churn.csv"
