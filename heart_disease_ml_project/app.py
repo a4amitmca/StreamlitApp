@@ -36,12 +36,12 @@ if data_choice=="Upload CSV":
       
 else:
      st.markdown("--------------Default File Heart.csv---------------------------")    
-     csv_url = "https://github.com/madhurendrabtech/mlassignment2/blob/main/WA_Fn-UseC-Telco-Customer-Churn.csv"
+     csv_url = "https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/WA_Fn-UseC-Telco-Customer-Churn.csv"
      df = pd.read_csv(csv_url)
      st.dataframe(df.head())
  
 st.markdown("--------------Report for all 6 Model of WA_Fn-UseC-Telco-Customer-Churn.csv.csv---------------------------") 
-response = requests.get("https://github.com/madhurendrabtech/mlassignment2/blob/main/Models/reports.json")
+response = requests.get("https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/Models/reports.json")
 if response.status_code == 200:
      metrics_text = response.text
      st.markdown(f"```\n{metrics_text}\n```")  # preserves formatting
@@ -50,7 +50,7 @@ st.markdown("--------------This is Matrix for all model selection of Heart.csv--
 
 
 # Fetch and display metrics
-response = requests.get("https://github.com/madhurendrabtech/mlassignment2/blob/main/Models/metrics.json")
+response = requests.get("https://raw.githubusercontent.com/madhurendrabtech/mlassignment2/main/Models/metrics.json")
 if response.status_code == 200:
    metrics_text = response.text
    st.markdown(f"```\n{metrics_text}\n```")  # preserves formatting         
